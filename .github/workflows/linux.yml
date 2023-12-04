@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: alpine:latest
+    container: ubuntu:latest
 
     steps:
       - name: Checkout Repository master branch
