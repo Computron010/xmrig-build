@@ -17,8 +17,7 @@ jobs:
 
       - name: Build
         run: |
-          echo 'https://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
-          apk add git bash make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers hwloc-dev hwloc-tools libuv-dev openssl-dev
+          apk add git bash make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers
           echo "XMRIG_VERSION="`cat src/version.h | grep -Eo "APP_VERSION\s+\"(.+?)\"" | awk -F "\"" '{print $2}'` >> $GITHUB_ENV
           sed -i 's/DonateLevel = 1/DonateLevel = 0/g' src/donate.h
           mkdir build
